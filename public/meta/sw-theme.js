@@ -10,7 +10,6 @@ async function loadDefaults() {
             throw new Error('default.json not found. reverted to default');
         }
         const data = await response.json();
-        // Extract the filename
         const devtheme = data.theme; 
         // Update the href
         // Check if theme exists just in case the JSON is empty
