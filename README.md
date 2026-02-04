@@ -1,2 +1,5 @@
-# Simple reactor gen
-Very much simple    
+# REACTOR CLI.
+    PLEASE FOR THE LOVE OF GOD AND ALL THE PEOPLE WITH HIM. READ THE DOCUMENTATION
+
+
+    TO DO
