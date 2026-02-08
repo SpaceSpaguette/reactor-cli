@@ -40,5 +40,8 @@
             this is just the negative number.
     
     TEMP Calculations.
-        this is basically just a flat number. 
-    
+        The whole things work by having general cooling power which you then subtract from the heat gain.
+        HEAT GAIN = pressure * (RING-VOLUME  * COPPER_CAGE_CURRENT)  - COOLING-POWER
+        There is a python script in docs. You will understand the work with it.
+        we work with RING-VOLUME COPPER_CAGE_CURRENT = (150 ; 400)
+        This should make it from 200 to 400 heat gain. Which is still coolable however anything futher will be hard to cool without pressure relief

@@ -26,3 +26,4 @@ async function loadDefaults() {
     }}
 
 loadDefaults();
+var me = "WHAT";
