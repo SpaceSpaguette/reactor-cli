@@ -1,0 +1,18 @@
+* {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+input,
+button,
+textarea,
+select {
+    border: 2px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+::selection {
+    background-color: #0000ff;
+    color: #ffffff;
+}
