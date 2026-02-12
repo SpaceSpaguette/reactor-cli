@@ -1,3 +1,10 @@
 * {
-    background-color: red;
+    background-color: rgb(28, 19, 5);
+    color: #ff8001;
+}
+
+
+body {
+    align-items: center;
+    justify-content: center;
 }

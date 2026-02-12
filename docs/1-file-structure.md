@@ -20,3 +20,6 @@
 # CSS
     there is a json put on .gitingore one line goes there. "theme":"{YOUR THEME}.css"
     this will load your preferred colors on startup. 
+
+# TRANSFERING FILES BETWEEN SCRIPTS.
+    THE FIRST SCRIPT MUST ALWAYS BE THE VALUES. When the scripts are loaded they run globally. this means that they can and will share variables and constants. Please keep this in mind.
