@@ -1,6 +1,4 @@
-function updateDisplay(time) {
-    const display = document.getElementById("display");
-    if (display) {
-        display.textContent = time;
-    }
+while (true) {
+    sleep(1000);
+    const result = document.getElementById("result");
 }
