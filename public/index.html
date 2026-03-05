@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link id="theme" rel="stylesheet" href="styles/style.css">
+    <link id="theme" rel="stylesheet" href="styles/rel.css">
+    <link id="theme" rel="stylesheet" href="styles/themes/debug.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reactor</title>
 </head>
 <body>
-    <div id="result"></div>
-    <div id="history"></div>
-    <div id="commandline"></div>
+<div class="container">
+    <div class="left-panel">
+        <div id="history">History</div>
+        <div id="commandline">Command Line</div>
+    </div>
+    
+    <div id="result">Result</div>
+</div>
 </body>
-<script src="meta/sw-theme.js"></script>
-<script src="meta/what.js"></script>
+<script src="meta/inits.js"></script>
+<script src="meta/main.js"></script>
 </html>

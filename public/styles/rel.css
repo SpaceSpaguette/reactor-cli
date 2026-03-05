@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh; 
+}
+.left-panel {
+    display: flex;
+    flex-direction: column; 
+    width: 33%;
+    height: 100%;
+}
+
+#history {
+    height: 90%; 
+}
+
+#commandline {
+    height: 10%; 
+}
+
+#result {
+    width: 67%;
+    height: 100%;
+}
