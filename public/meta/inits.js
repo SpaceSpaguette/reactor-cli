@@ -15,3 +15,28 @@ var turbines_pressure = 0;
 
 // dev env == true
 var debug = true;
+
+
+
+
+// fields
+
+
+var history = document.getElementById("history");
+var result  = document.getElementById("result");
+
+
+
+
+
+// very sensitive. please ensure you dont touch it. LOADS COMMANDS INTO MEMORY
+let commands = {};
+fetch("meta/data/commands.json")
+    .then(r => r.json())
+    .then(data => {
+        commands = data;
+        console.log("Commands loaded into memory:");
+    })
+    .catch(err => console.error("Failed to load commands:", err));
+
+
