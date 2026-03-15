@@ -1,7 +1,7 @@
 {
     "hello":["hello", 0],
     "loadsomething":["loadthis", 2],
-    "changestation":["ChangeStation", 1],
+    "cs":["ChangeStation", 1],
     "exit":["Exit", 0],
     "shop":["Shop", 1],
     "temperature":["Temperature", 0]

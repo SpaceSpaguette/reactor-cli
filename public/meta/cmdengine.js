@@ -1,4 +1,5 @@
 function runCommand(input) {
+    printText("info",input)
     if (!commands || Object.keys(commands).length === 0) {
         console.log("Commands not loaded yet");
         return;
@@ -16,7 +17,7 @@ function runCommand(input) {
     const maxArgs = commandEntry[1];  // max args allowed
 
     if (cmd.length > maxArgs + 1) {   // +1. the first is the name of the command
-        console.log("Too many arguments");
+        printText("error","Too many arguments");
         return;
     }
 
@@ -28,14 +29,19 @@ function runCommand(input) {
     }
 }
 
-function loadcmds() {
+async function loadcmds() {
     let station = "meta/data/" + subSystem + ".json";
-    fetch(station)
-    .then(res => {
+    try {
+        const res = await fetch(station);
+
         if (!res.ok) {
-            return false;
+            return false; // HTTP error
         }
-        commands = res.json();
-        return true;
-    })
+
+        commands = await res.json(); // wait for JSON to be parsed
+        return true; // success
+    } catch (err) {
+        console.error("Fetch error:", err);
+        return false;
+    }
 }
