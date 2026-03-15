@@ -43,5 +43,5 @@
         [VALVE]                 - [ON/OFF/X%] Inlet valve. This allows you to allow the steam to flow into the turbines
         
         ## SHOP - This is for pleasure only.
-        [LIST]  - Lists items
-        [BUY]   - Buys items
+        [LIST]  - Lists items   
+        [BUY]   - Buys items    
