@@ -23,3 +23,14 @@ function Shop (action) {
     } else if (action.toLowerCase() === "show") {
         console.log("Showing items...");
     }}
+
+function Temperature (){
+    console.log(`Reactor Temp: ${reactor_temp} K`);
+    console.log(`Copper Cage Temp: ${coppercage_temp} K`);
+    console.log(`Coolant Temp: ${coolant_temp} K`);
+    console.log(`Turbines Temp: ${turbines_temp} K`);
+
+    if (reactor_temp > 800) {
+        console.warn("Reactor temperature is too high!");
+    }
+}
