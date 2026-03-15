@@ -17,7 +17,8 @@ var turbines_pressure = 0;
 var debug = true;
 
 
-
+// Current subsystem
+var subSystem = "Home"
 
 // fields
 
@@ -39,4 +40,4 @@ fetch("meta/data/commands.json")
     })
     .catch(err => console.error("Failed to load commands:", err));
 
-
+// Executed on every launch. Dont mess with it.

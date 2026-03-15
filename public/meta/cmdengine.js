@@ -27,3 +27,16 @@ function runCommand(input) {
         console.log("Function not found:", funcName);
     }
 }
+
+
+function loadcmds(subSystem) {
+    let station = "meta/data/" + subSystem + ".json";
+    fetch(station)
+    .then(res => {
+        if (!res.ok) {
+            return false;
+        }
+        commands = res.json();
+        return true;
+    })
+}
