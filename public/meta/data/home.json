@@ -1,4 +1,8 @@
 {
     "hello":["hello", 0],
-    "loadsomething":["loadthis", 2]
+    "loadsomething":["loadthis", 2],
+    "changestation":["changestation", 1],
+    "exit":["exit", 0],
+    "shop":["shop", 0],
+    "temperature":["temperature", 0]
 }
