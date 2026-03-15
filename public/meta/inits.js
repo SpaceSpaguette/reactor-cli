@@ -24,10 +24,15 @@ var debug = true;
 var subSystem = "home"
 
 // fields
+const maxLines = 47;        // maximum lines in the console
+const maxLineLength = 50;   // maximum characters per line
+const lines = [];           // stores all lines as objects
 
 
-var history = document.getElementById("history");
-var result  = document.getElementById("result");
+
+// elements
+const history = document.getElementById("history");
+const result  = document.getElementById("result");
 
 // contains the command list. Stores it in memory
 let commands = {};

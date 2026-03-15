@@ -10,3 +10,9 @@
     background-color: #212121;
     color: rgb(26, 152, 166);
 }
+.error {
+    color: #e62a2a;
+}
+.warn {
+    color: #ce9c12;
+}

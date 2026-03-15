@@ -18,7 +18,10 @@ html, body {
 }
 
 #history {
-    height: 90%; 
+    height: 90%;
+    font-family: monospace;
+    font-size: 20px;
+    line-height: 1.2em;
 }
 
 #commandline {
