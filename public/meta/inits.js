@@ -1,3 +1,7 @@
+var dir = {
+
+}
+
 // values are loaded first. we will change the later. 
 
 var reactor_temp = 293;

@@ -1,0 +1,6 @@
+{
+    "help": "help()",
+    "cs": "change_subsystem()",
+    "exit": "exit()",
+    "station": "station()"
+}

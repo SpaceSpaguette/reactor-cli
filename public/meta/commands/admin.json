@@ -1,0 +1,5 @@
+{
+    "begin": "begin()",
+    "emergency_shutdown": "em_shutdown()",
+    "eprs": "eprs()"
+}

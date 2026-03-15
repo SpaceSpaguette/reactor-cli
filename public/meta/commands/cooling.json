@@ -1,0 +1,7 @@
+{
+    "coolant_type": "coolant_type()",
+    "type": "type()",
+    "coolant_valve": "coolant_valve()",
+    "refrigenerator": "refrigenerator()",
+    "purge": "purge()",
+}
