@@ -13,6 +13,31 @@ var coolant_pressure = 0;
 var turbines_pressure = 0;
 
 
+//subSystem var
+var subSystem = {
+    current: "main",
+    isReady: false,
+};
+
+function ChangeStation(name) {
+    let found = true;
+
+    
+};
+
+function Exit() {
+    subSystem.current = "main";
+    console.log("Exited to main station");
+}
+
+function Shop (action) {
+    if (action.toLowerCase() === "buy") {
+        console.log("Buying items...");
+    } else if (action.toLowerCase() === "show") {
+        console.log("Showing items...");
+    }
+}
+
 // dev env == true
 var debug = true;
 
