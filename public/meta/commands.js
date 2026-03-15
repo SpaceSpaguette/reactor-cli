@@ -9,6 +9,7 @@ function loadthis (data1 = "FUCK",data2 = "YOU") {
 
 function ChangeStation(name) {
     console.log("changed to ", name)
+    loadcmds();
 };
 
 function Exit() {

@@ -28,8 +28,7 @@ function runCommand(input) {
     }
 }
 
-
-function loadcmds(subSystem) {
+function loadcmds() {
     let station = "meta/data/" + subSystem + ".json";
     fetch(station)
     .then(res => {

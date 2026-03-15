@@ -19,14 +19,9 @@ var subSystem = 'home';
 // dev env == true
 var debug = true;
 
-<<<<<<< HEAD
-// Output options
-var history = document.getElementById("history");
-var result  = document.getElementById("result");
-=======
 
 // Current subsystem
-var subSystem = "Home"
+var subSystem = "home"
 
 // fields
 
@@ -34,19 +29,12 @@ var subSystem = "Home"
 var history = document.getElementById("history");
 var result  = document.getElementById("result");
 
-
-
-
-
-// very sensitive. please ensure you dont touch it. LOADS COMMANDS INTO MEMORY
+// contains the command list. Stores it in memory
 let commands = {};
-fetch("meta/data/commands.json")
+fetch("meta/data/home.json")
     .then(r => r.json())
     .then(data => {
         commands = data;
         console.log("Commands loaded into memory:");
     })
     .catch(err => console.error("Failed to load commands:", err));
-
-// Executed on every launch. Dont mess with it.
->>>>>>> origin/dev-spaguette
