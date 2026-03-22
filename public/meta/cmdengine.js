@@ -29,19 +29,15 @@ function runCommand(input) {
     }
 }
 
-async function loadcmds() {
-    let station = "meta/data/" + subSystem + ".json";
-    try {
-        const res = await fetch(station);
-
-        if (!res.ok) {
-            return false; // HTTP error
-        }
-
-        commands = await res.json(); // wait for JSON to be parsed
-        return true; // success
-    } catch (err) {
-        console.error("Fetch error:", err);
-        return false;
+async function loadCommandFile(source) {
+    const response = await fetch(`meta/data/${source}.json`) // loads the entire file into this variable.
+    if (!response.ok) { // .ok is just a bool (true/false) if false then run this
+         // console.log("couldn't load file") // dont mess with it too much.
+        return false; // we return something to the wrapper
+    } 
+    
+    else {
+        commands = await response.json() // this makes the bytecode into actual json. yes it is a much real thing
+        return true; // Returns the value for wrapper
     }
 }

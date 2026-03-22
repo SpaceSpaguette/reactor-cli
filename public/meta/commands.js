@@ -1,37 +1,25 @@
-function hello () {
-    result.innerHTML = "Hello"
+async function changeStation(station) {
+    const response = await loadCommandFile(station);
+    console.log(response)
+    if (!response) {
+        printText('error','Well this went so wrong')
+    } else {
+        printText('warn',`Changed to ${station}`)
+    }
+}
+
+async function Exit() {
+    await loadCommandFile("home");
+    printText('warn',"Exitting into main.")
 }
 
 
-function loadthis (data1 = "FUCK",data2 = "YOU") {
-    result.innerHTML = `${data1} ${data2} `;
-}
-
-function ChangeStation(name) {
-    printText("warn",`changed to ${name}`)
-
-    loadcmds();
-};
-
-function Exit() {
-    subSystem = "home";
-    console.log("Exited to main station");
-}
-
-function Shop (action) {
-    if (action.toLowerCase() === "buy") {
-        console.log("Buying items...");
-    } else if (action.toLowerCase() === "show") {
-        console.log("Showing items...");
-    }}
-
-function Temperature (){
-    console.log(`Reactor Temp: ${reactor_temp} K`);
-    console.log(`Copper Cage Temp: ${coppercage_temp} K`);
-    console.log(`Coolant Temp: ${coolant_temp} K`);
-    console.log(`Turbines Temp: ${turbines_temp} K`);
-
-    if (reactor_temp > 800) {
-        console.warn("Reactor temperature is too high!");
+async function StartReactor() {
+    printText('error', "Start reator? Y/N");
+    const confirm = await getInput()
+    if (confirm === "y" || confirm === "Y") {
+        printText('error','IGHT')
+    } else {
+        printText('warn', "cancelling operation")
     }
 }

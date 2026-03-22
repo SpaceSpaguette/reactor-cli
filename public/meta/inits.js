@@ -28,7 +28,7 @@ const maxLines = 47;        // maximum lines in the console
 const maxLineLength = 50;   // maximum characters per line
 const lines = [];           // stores all lines as objects
 
-
+var inputpass = 0
 
 // elements
 const history = document.getElementById("history");

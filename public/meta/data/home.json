@@ -1,8 +1,7 @@
 {
-    "hello":["hello", 0],
-    "loadsomething":["loadthis", 2],
-    "cs":["ChangeStation", 1],
+    "cs":["changeStation", 1],
     "exit":["Exit", 0],
     "shop":["Shop", 1],
+    "sr":["StartReactor", 0],
     "temperature":["Temperature", 0]
 }

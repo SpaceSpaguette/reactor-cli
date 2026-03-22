@@ -25,3 +25,20 @@ function printText(form = "warn", text = "TEXT UNDEFINED") {
 
 
 
+
+
+let resolver;
+async function getInput(flag=true , response='') {
+    if (flag === true) {
+        inputpass = 1;
+        return new Promise((resolve) => {
+            resolver = resolve;
+        });
+
+    } else {
+        //we got data 
+    if (resolver) {
+      resolver(response); // This 'triggers' the first function to finish
+    }
+    }
+}
