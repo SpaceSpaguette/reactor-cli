@@ -46,7 +46,7 @@ html, body {
     font-family: monospace;
     font-size: 20px;
     border-radius: 15px;
-}
+}   
 
 #result {
     width: 69%;
@@ -55,4 +55,73 @@ html, body {
     justify-self: center;
     padding: 10px;
     margin-top: 20px;
+    position: relative;
+    background-color: #050505;
+    color: white;
 }
+
+.reactor-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: inline-block;
+    background: #0d0d0d;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.reactor-label {
+    font-family: 'Consolas', monospace;
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.reactor-display {
+    display: flex;
+    gap: 6px;
+}
+
+.reactor-container.warning-active {
+    background-color: #1a0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+    animation: reactor-pulse-border 0.8s infinite alternate;
+}
+
+@keyframes reactor-pulse-border {
+    from { border-color: #660000; }
+    to { border-color: #ff0000; }
+}
+
+.reactor-digit {
+    position: relative;
+    width: 22px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.reactor-segment {
+    position: absolute;
+    background-color: #1a0808;
+    border-radius: 1px;
+}
+
+.reactor-segment.segment-on {
+    background-color: #ff1100;
+    box-shadow: 0 0 5px #aa0000;
+}
+
+.reactor-segment.a { top: 0; left: 2px; width: 18px; height: 3px; }
+.reactor-segment.b { top: 2px; right: 0; width: 3px; height: 16px; }
+.reactor-segment.c { bottom: 2px; right: 0; width: 3px; height: 16px; }
+.reactor-segment.d { bottom: 0; left: 2px; width: 18px; height: 3px; }
+.reactor-segment.e { bottom: 2px; left: 0; width: 3px; height: 16px; }
+.reactor-segment.f { top: 2px; left: 0; width: 3px; height: 16px; }
+.reactor-segment.g { top: 18px; left: 2px; width: 18px; height: 3px; }
