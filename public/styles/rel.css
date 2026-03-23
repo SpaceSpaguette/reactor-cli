@@ -18,17 +18,41 @@ html, body {
 }
 
 #history {
-    height: 90%;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 100%;
+    width: 97%;
     font-family: monospace;
     font-size: 20px;
     line-height: 1.2em;
+    border-radius: 10px;
+    
 }
 
 #commandline {
-    height: 10%; 
+    height: 15%; 
+    font-family: monospace;
+    font-size: 20px;
+}
+
+#cmdInput {
+    width: 98%;
+    height: 98%;
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 5px;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 15px;
 }
 
 #result {
-    width: 67%;
-    height: 100%;
+    width: 69%;
+    height: 94%;
+    border-radius: 10px;
+    justify-self: center;
+    padding: 10px;
+    margin-top: 20px;
 }
