@@ -1,9 +1,9 @@
 const reactorControl = {
     currentValue: 451500,
     step: 30,
-    maxVal: 452000,
-    minVal: 451000,
-    warningThreshold: 451900,
+    maxVal: 480000,
+    minVal: 430000,
+    warningThreshold: 478900,
     digitCount: 6,
     elements: [],
     
@@ -50,7 +50,7 @@ const reactorControl = {
         this.elements.push(segmentMap);
       }
   
-      setInterval(() => this.update(wrapper), 500);
+      setInterval(() => this.update(wrapper), 1000);
     },
   
     update(container) {
