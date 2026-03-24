@@ -1,0 +1,58 @@
+/* Soviet 1986 Control Terminal Vibe */
+body {
+    background-color: #121312; /* Very dark industrial charcoal */
+}
+
+#commandline {
+    background-color: #1a1c1a;
+    color: #ffb000; /* Amber CRT text */
+}
+
+#history {
+    background-color: #151615;
+    color: #ffb000;
+    border: #4a4d4a 2px solid; /* Thick industrial grey border */
+    border-radius: 3px !important; /* Blocky, hardware feel */
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4); /* Slight CRT blur */
+}
+
+#result {
+    background-color: #1a1c1a;
+    color: #e0e0d0; /* Off-white text */
+    border: #4a4d4a 2px solid;
+    border-radius: 3px !important;
+    text-shadow: 0 0 1px rgba(224, 224, 208, 0.4);
+}
+
+.error {
+    color: #cc3333; /* Faded alarm red */
+    background-color: rgba(204, 51, 51, 0.15); /* Faint red highlight */
+    border-left: 3px solid #cc3333;
+    padding-left: 5px;
+    display: inline-block;
+    width: 98%;
+}
+
+.warn {
+    color: #d9b326; /* Dirty yellow */
+}
+
+.info {
+    color: #92a4b8; /* Pale, desaturated blue/grey */
+}
+
+#cmdInput {
+    background-color: #111311;
+    color: #ffb000;
+    border: #333633 2px solid;
+    border-radius: 3px !important;
+    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4);
+}
+
+#cmdInput:focus {
+    outline: none;
+    border-color: #ffb000;
+    background-color: #1a1c1a;
+    box-shadow: none;
+}
