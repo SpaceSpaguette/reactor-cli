@@ -4,6 +4,7 @@
     "shop":["Shop", 1],
     "sr":["StartReactor", 0],
     "temperature":["Temperature", 0],
-    "color":["Color", 1]
-    "pindir":["Pindir",0]
+    "color":["Color", 1],
+    "pindir":["Pindir",0],
+    "help":["Help",0]
 }
