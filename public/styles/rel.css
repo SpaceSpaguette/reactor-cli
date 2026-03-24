@@ -28,6 +28,7 @@ html, body {
     line-height: 1.2em;
     border-radius: 10px;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 #commandline {
