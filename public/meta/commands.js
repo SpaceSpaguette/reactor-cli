@@ -49,7 +49,7 @@ function Help(help) {
     printText('info', 'shop - open shop');
     printText('info', 'sr - start reactor');
     printText('info', 'temperature - show temperature');
-    printText('info', 'theme - change theme');
+    printText('info', 'theme - change theme (chernobyl, debug, produciton)');
     printText('info', 'help - show help');
 }
 
