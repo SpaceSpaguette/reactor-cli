@@ -1,8 +1,0 @@
-{
-    "cs":["changeStation", 1],
-    "exit":["Exit", 0],
-    "shop":["Shop", 1],
-    "sr":["StartReactor", 0],
-    "temperature":["Temperature", 0],
-    "color":["Color", 1]
-}
