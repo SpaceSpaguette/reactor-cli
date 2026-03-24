@@ -23,3 +23,7 @@ async function StartReactor() {
         printText('warn', "cancelling operation")
     }
 }
+
+async function Pindir(pindir) {
+    printText ('error','8=====================================D')
+}
