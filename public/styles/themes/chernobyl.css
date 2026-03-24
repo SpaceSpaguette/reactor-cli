@@ -1,33 +1,33 @@
-/* Soviet 1986 Control Terminal Vibe */
+
 body {
-    background-color: #121312; /* Very dark industrial charcoal */
+    background-color: #121312;
 }
 
 #commandline {
     background-color: #1a1c1a;
-    color: #ffb000; /* Amber CRT text */
+    color: #ffb000; 
 }
 
 #history {
     background-color: #151615;
     color: #ffb000;
-    border: #4a4d4a 2px solid; /* Thick industrial grey border */
-    border-radius: 3px !important; /* Blocky, hardware feel */
+    border: #4a4d4a 2px solid; 
+    border-radius: 3px !important; 
     box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
-    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4); /* Slight CRT blur */
+    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4); 
 }
 
 #result {
     background-color: #1a1c1a;
-    color: #e0e0d0; /* Off-white text */
+    color: #e0e0d0;
     border: #4a4d4a 2px solid;
     border-radius: 3px !important;
     text-shadow: 0 0 1px rgba(224, 224, 208, 0.4);
 }
 
 .error {
-    color: #cc3333; /* Faded alarm red */
-    background-color: rgba(204, 51, 51, 0.15); /* Faint red highlight */
+    color: #cc3333; 
+    background-color: rgba(204, 51, 51, 0.15);
     border-left: 3px solid #cc3333;
     padding-left: 5px;
     display: inline-block;
@@ -35,11 +35,11 @@ body {
 }
 
 .warn {
-    color: #d9b326; /* Dirty yellow */
+    color: #d9b326; 
 }
 
 .info {
-    color: #92a4b8; /* Pale, desaturated blue/grey */
+    color: #92a4b8;
 }
 
 #cmdInput {
