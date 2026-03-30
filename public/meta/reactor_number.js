@@ -1,11 +1,9 @@
 const reactorControl = {
-    currentValue: 451500,
-    step: 30,
-    maxVal: 480000,
-    minVal: 430000,
+    currentValue: 0,
     warningThreshold: 478900,
-    digitCount: 6,
+    digitCount: 7,
     elements: [],
+    wrapper: null, // Store the reference here
     
     numberMap: {
       '0': ['a', 'b', 'c', 'd', 'e', 'f'],
@@ -24,16 +22,17 @@ const reactorControl = {
       const container = document.getElementById(containerId);
       if (!container) return;
   
-      const wrapper = document.createElement('div');
-      wrapper.className = 'reactor-container';
-      wrapper.innerHTML = `
+      this.wrapper = document.createElement('div');
+      this.wrapper.className = 'reactor-container';
+      this.wrapper.innerHTML = `
         <div class="reactor-label">System Status</div>
         <div class="reactor-display" id="${containerId}-display"></div>
       `;
   
-      container.appendChild(wrapper);
+      container.appendChild(this.wrapper);
       const display = document.getElementById(`${containerId}-display`);
   
+      this.elements = [];
       for (let i = 0; i < this.digitCount; i++) {
         const digitDiv = document.createElement('div');
         digitDiv.className = 'reactor-digit';
@@ -50,23 +49,33 @@ const reactorControl = {
         this.elements.push(segmentMap);
       }
   
-      setInterval(() => this.update(wrapper), 1000);
+      // Start the tracking loop
+      this.tick();
+    },
+
+    tick() {
+      this.update();
+      // Using requestAnimationFrame for high-frequency background sync
+      requestAnimationFrame(() => this.tick());
     },
   
-    update(container) {
-      this.currentValue += this.step + (Math.random() * 4 - 2);
-  
-      if (this.currentValue >= this.maxVal || this.currentValue <= this.minVal) {
-        this.step *= -1;
+    update() {
+      // 1. Pull the live value from your background variable
+      if (typeof reactor_temp !== 'undefined') {
+        this.currentValue = reactor_temp;
       }
+
+      // 2. Safety check: Ensure the wrapper exists before modifying classes
+      if (!this.wrapper) return;
   
       if (this.currentValue > this.warningThreshold) {
-        container.classList.add('warning-active');
+        this.wrapper.classList.add('warning-active');
       } else {
-        container.classList.remove('warning-active');
+        this.wrapper.classList.remove('warning-active');
       }
   
-      const strVal = Math.floor(this.currentValue).toString().padStart(this.digitCount, '0');
+      // 3. Update the segments
+      const strVal = Math.floor(this.currentValue).toString().padStart(this.digitCount, '0').slice(-this.digitCount);
       
       this.elements.forEach((digit, idx) => {
         const char = strVal[idx];
@@ -76,8 +85,4 @@ const reactorControl = {
         });
       });
     }
-  };
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    reactorControl.init('result');
-  });
+};
