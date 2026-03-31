@@ -17,7 +17,7 @@ var subSystem = "home"
 // fields
 const maxLines = 500;       // maximum lines in the console
 const maxLineLength = 50;   // maximum characters per line
-const lines = [];           // stores all lines as objects
+var lines = [];           // stores all lines as objects
 
 const inputHistory = [];    // stores command history for arrow keys
 let inputHistoryIndex = -1; // current position in input history

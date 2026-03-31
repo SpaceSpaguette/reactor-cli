@@ -8,11 +8,11 @@ input.addEventListener("keydown", function(event) {
         }
 
         if (inputpass === 1) {
-            console.log('f')
+            console.log('Found input')
             getInput(false,cmd);
             inputpass = 0;
         }else{
-            console.log('help')
+            console.log('Something happened')
         runCommand(cmd);
         }
 

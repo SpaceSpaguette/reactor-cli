@@ -17,7 +17,8 @@ async function Exit() {
 async function StartReactor() {
     printText('error', "Start reator? Y/N");
     const confirm = await getInput()
-    if (confirm === "y" || confirm === "Y") {
+    if ((confirm === "y" || confirm === "Y")&& !isRunning) {
+        printText('warn','Staring reactor')
         bonusheat = 50
         isRunning = true
     } else {
@@ -30,7 +31,7 @@ async function Pindir(pindir) {
 }
 
 
-
+ // This is as name suggest for changing themes. Nothing we can do here.
 function Theme(themeName) {
     if (!themeName) {
         printText('error', 'Usage: theme <name>');
@@ -55,5 +56,10 @@ function Help(help) {
     printText('info', 'theme - change theme (chernobyl, debug, produciton, blue)');
     printText('info', 'help - show help');
     // I will crate a function to take care of this. For now. Fuck it
+}
+
+
+function clearScreen() {
+    lines = []
 }
 

@@ -3,7 +3,7 @@ function backgroundloop() {
         temperature()
     }
     reactorControl.update('result');
-    setTimeout(backgroundloop,100);
+    setTimeout(backgroundloop,500);
 }
 reactorControl.init('result')
 backgroundloop();

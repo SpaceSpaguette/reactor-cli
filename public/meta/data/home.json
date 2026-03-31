@@ -7,5 +7,6 @@
     "color":["Color", 1],
     "pindir":["Pindir",0],
     "theme":["Theme",1],
-    "help":["Help",0]
+    "help":["Help",0],
+    "cls":["clearScreen",0]
 }
