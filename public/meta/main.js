@@ -1,7 +1,9 @@
 function backgroundloop() {
-    reactor_temp ++;
+    if (isRunning) {
+        temperature()
+    }
     reactorControl.update('result');
-    setTimeout(backgroundloop,10);
+    setTimeout(backgroundloop,100);
 }
 reactorControl.init('result')
 backgroundloop();

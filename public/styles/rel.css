@@ -91,8 +91,8 @@ html, body {
 
 .reactor-container.warning-active {
     background-color: #1a0000;
-    border-color: #ff0000;
-    box-shadow: 0 0 20px #ff0000;
+    border-color: #c37f12;
+    box-shadow: 0 0 20px #da4703;
     animation: reactor-pulse-border 0.8s infinite alternate;
 }
 
@@ -126,4 +126,3 @@ html, body {
 .reactor-segment.e { bottom: 2px; left: 0; width: 3px; height: 16px; }
 .reactor-segment.f { top: 2px; left: 0; width: 3px; height: 16px; }
 .reactor-segment.g { top: 18px; left: 2px; width: 18px; height: 3px; }
-

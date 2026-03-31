@@ -2,15 +2,15 @@ async function changeStation(station) {
     const response = await loadCommandFile(station);
     console.log(response)
     if (!response) {
-        printText('error','Well this went so wrong')
+        printText('error','Error this substation doesnt exist')
     } else {
-        printText('warn',`Changed to ${station}`)
+        printText('info',`Changed to ${station}`)
     }
 }
 
 async function Exit() {
     await loadCommandFile("home");
-    printText('warn',"Exitting into main.")
+    printText('info',"Exitting into main.")
 }
 
 
@@ -18,15 +18,18 @@ async function StartReactor() {
     printText('error', "Start reator? Y/N");
     const confirm = await getInput()
     if (confirm === "y" || confirm === "Y") {
-        printText('error','IGHT')
+        bonusheat = 50
+        isRunning = true
     } else {
-        printText('warn', "cancelling operation")
+        printText('warn', "Cancelling operation")
     }
 }
 
 async function Pindir(pindir) {
-    printText ('error','8=====================================D')
+    printText ('error',"B=============D")
 }
+
+
 
 function Theme(themeName) {
     if (!themeName) {
@@ -51,5 +54,6 @@ function Help(help) {
     printText('info', 'temperature - show temperature');
     printText('info', 'theme - change theme (chernobyl, debug, produciton, blue)');
     printText('info', 'help - show help');
+    // I will crate a function to take care of this. For now. Fuck it
 }
 

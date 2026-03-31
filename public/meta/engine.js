@@ -44,3 +44,26 @@ async function getInput(flag=true , response='') {
     }
     }
 }
+
+
+// This has to somehow make temperature. Although it has no idea how
+function temperature() {
+    var heatgain = reactor_temp / 100;
+
+    if (!EPRS) {
+        reactor_temp += heatgain;
+
+        if (bonusheat > 0) {
+            bonusheat -= 1;
+            reactor_temp += 5;
+        }
+    }
+
+    if (reactor_temp > 550 && reactor_temp < 1000) {
+        fuelcellavrg -= heatgain / 10;
+    }
+
+    if (reactor_temp > 1000) {
+        fuelcellavrg += heatgain / 10;
+    }
+}

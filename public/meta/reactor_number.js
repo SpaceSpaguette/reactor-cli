@@ -1,6 +1,6 @@
 const reactorControl = {
     currentValue: 0,
-    warningThreshold: 478900,
+    warningThreshold: 47890,
     digitCount: 7,
     elements: [],
     wrapper: null, // Store the reference here
@@ -25,7 +25,7 @@ const reactorControl = {
       this.wrapper = document.createElement('div');
       this.wrapper.className = 'reactor-container';
       this.wrapper.innerHTML = `
-        <div class="reactor-label">System Status</div>
+        <div class="reactor-label">Temperature</div>
         <div class="reactor-display" id="${containerId}-display"></div>
       `;
   
