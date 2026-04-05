@@ -1,3 +1,12 @@
+/*
++===============================================+
+| This file is the commands file. It contains   |
+| functions meant to be executed via CMDEngine  |
+| ********************************************  |
+| This means: User can call them. User          |
+| interacts through them                        |
++===============================================+
+*/
 async function changeStation(station) {
     const response = await loadCommandFile(station);
     console.log(response)
