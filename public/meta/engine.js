@@ -11,7 +11,7 @@
 
 /*
 +=============PRINT TEXT FUNCTION===================+
-| The following function has 2 functions            |
+| The following Method has 2 functions              |
 |   Provide a method to print text to screen        |
 |   Provide history and display settings.           |
 | Due to these quite essential functions            |
@@ -40,7 +40,7 @@ function printText(form = "warn", text = "TEXT UNDEFINED") {
     }
 
     // Rebuild HTML inside the container
-    history.innerHTML = lines.map(line => 
+    history.innerHTML = lines.map(line =>
         `<span class="${line.form}">${line.text}</span><br>`
     ).join("");
 
@@ -60,7 +60,7 @@ function printText(form = "warn", text = "TEXT UNDEFINED") {
 +=============READ BEFORE YOU ACT===============+
 */
 let resolver;
-async function getInput(flag=true , response='') {
+async function getInput(flag = true, response = '') {
     if (flag === true) {
         inputpass = 1;
         return new Promise((resolve) => {
@@ -69,9 +69,9 @@ async function getInput(flag=true , response='') {
 
     } else {
         //we got data 
-    if (resolver) {
-      resolver(response); // This 'triggers' the first function to finish
-    }
+        if (resolver) {
+            resolver(response); // This 'triggers' the first function to finish
+        }
     }
 }
 
@@ -102,3 +102,92 @@ function temperature() {
     }
 }
 
+
+
+
+
+
+/*
++--------#3---------+
+| F-U-E-L _ C-E-L-L |
++------${FC[3]}-----+
+
++--------#2---------+
+| F-U-E-L _ C-E-L-L |
++------${FC[2]}-----+
+
++--------#1---------+
+| F-U-E-L _ C-E-L-L |
++------${FC[1]}-----+
+
+
+
+    +===========REACTOR CORE===========+
+    |   ___  ___  ___  ___  ___  ___   |
+    |  |   ||   ||   ||   ||   ||   |  |
+    |  | F || F || F || F || F || F |  |
+    |  | U || U || U || U || U || U |  |
+    |  | E || E || E || E || E || E |  |
+    |  | L || L || L || L || L || L |  |
+    |  | + || + || + || + || + || + |  |
+    |  | C || C || C || C || C || C |  |
+    |  | E || E || E || E || E || E |  |
+    |  | L || L || L || L || L || L |  |
+    |  | L || L || L || L || L || L |  |
+    |  |   ||   ||   ||   ||   ||   |  |
+    |  | 1 || 2 || 3 || 4 || 5 || 6 |  |
+    |  |___||___||___||___||___||___|  |
+    +=====THIS IS A PLACEHOLDER========+
+▀ 	Upper half block
+▁ 	Lower one eighth block
+▂ 	Lower one quarter block
+▃ 	Lower three eighths block
+▄ 	Lower half block
+▅ 	Lower five eighths block
+▆ 	Lower three quarters block
+▇ 	Lower seven eighths block
+█ 	Full block
+▉ 	Left seven eighths block
+▊ 	Left three quarters block
+▋ 	Left five eighths block
+▌ 	Left half block
+▍ 	Left three eighths block
+▎ 	Left one quarter block
+▏ 	Left one eighth block
+▐ 	Right half block
+░ 	Light shade
+▒ 	Medium shade
+▓ 	Dark shade
+▔ 	Upper one eighth block
+▕ 	Right one eighth block
+▖ 	Quadrant lower left
+▗ 	Quadrant lower right
+▘ 	Quadrant upper left
+▙ 	Quadrant upper left and lower left and lower right
+▚ 	Quadrant upper left and lower right
+▛ 	Quadrant upper left and upper right and lower left
+▜ 	Quadrant upper left and upper right and lower right
+▝ 	Quadrant upper right
+▞ 	Quadrant upper right and lower left
+▟ 	Quadrant upper right and lower left and lower right
+
+    Copied from wikipedia
+    https://en.wikipedia.org/wiki/List_of_Unicode_characters
+
+    
+    ▛▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+    ▌ ▛
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+    ▌
+
+*/
