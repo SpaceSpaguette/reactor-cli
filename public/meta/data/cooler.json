@@ -1,5 +1,6 @@
 {
     "exit":["Exit", 0],
     "cs":["changeStation",0],
-    "f":["loadthis",2]
+    "f":["loadthis",2],
+    "ru":["refrigerationUnits", 0]
 }

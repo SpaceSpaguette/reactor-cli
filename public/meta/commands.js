@@ -35,6 +35,35 @@ async function StartReactor() {
     }
 }
 
+let isRUActive = false;
+let isOnCooldown = false;
+
+
+async function RefrigerationUnits() {
+    if (isOnCooldown) {
+        printText('error', "Refrigeration units are on cooldown. Please wait.")
+        return;
+    }
+
+    printText('error', "Activate refrigeration units? Y/N");
+    const confirm = await getInput();
+    if (confirm === "y" || confirm === "Y") {
+        printText('warn', "Activating refrigeration units. Cooling for 30 seconds.");
+        isRUActive = true;
+        isOnCooldown = true;
+
+        reactor_temp -= 14;
+        
+        setTimeout(() => {
+            isRUActive = false
+            temp_decrease = 0
+            printText('warn','REFRIGERATION UNITS: Finished cooling. Starting cooldown.')
+        }, 30000); // 30 seconds cooldown
+    } else {
+        printText('warn', "Cancelling operation")
+    }
+}
+
 async function Pindir(pindir) {
     printText ('error',"B=============D")
 }
