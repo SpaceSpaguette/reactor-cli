@@ -8,7 +8,7 @@
 ▇ 	Lower seven eighths block
 █ 	Full block
 ▉ 	Left seven eighths block
-▊ 	Left three quarters block
+     	Left three quarters block
 ▋ 	Left five eighths block
 ▌ 	Left half block
 ▍ 	Left three eighths block
@@ -33,3 +33,17 @@
 
     Copied from wikipedia
     https://en.wikipedia.org/wiki/List_of_Unicode_characters
+
+
+    ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+    ▏    ▄▄▄▄▄▄▄▄▄▄ FUEL ▄▄▄▄▄▄▄▄▄▄▄▄ 
+    ▏   ▐                           ▐     
+    ▏   ▐  Fuel AVERAGE: <span id="fuelaverage">   100%   </span> ▐ 
+    ▏   ▐  EST. Time to refuel: <span id="ttrefuel">NOT STARTED<span> ▐ 
+        ▐                           ▐
+    ▏   ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▐   
+    ▏     
+    ▏     
+    ▏     
+    ▏     
+    ▏

@@ -19,23 +19,33 @@
         </div>
         <div id="reactor-panel"></div>
         <div id="result">
-<pre style="line-height: 0.6; font-family: monospace;">
-<span class="error">+----------------------------------+</span><br>
-|   ___  ___  ___  ___  ___  ___   |<br>
-|  |...||...||...||...||...||...|  |<br>
-|  | F || F || F || F || F || F |  |<br>
-|  | U || U || U || U || U || U |  |<br>
-|  | E || E || E || E || E || E |  |<br>
-|  | L || L || L || L || L || L |  |<br>
-|  | + || + || + || + || + || + |  |<br>
-|  | C || C || C || C || C || C |  |<br>
-|  | E || E || E || E || E || E |  |<br>
-|  | L || L || L || L || L || L |  |<br>
-|  | L || L || L || L || L || L |  |<br>
-|  |   ||   ||   ||   ||   ||   |  |<br>
-|  | 1 || 2 || 3 || 4 || 5 || 6 |  |<br>
-|  |___||___||___||___||___||___|  |<br>
-+----------------------------------+<br>
+<pre style="line-height: 0.6; font-family: monospace; font-size:xx-large;">
+    ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<br>
+    ▏     <span class="fuelframe">▄▄▄▄▄▄▄      FUEL     ▄▄▄▄▄▄▄</span>      ▏<br>
+    ▏    <span class="fuelframe">▐</span>                             <span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐</span>  Fuel AVERAGE    : <span id="fuelaverage">  100%   </span><span class="fuelframe">▊</span>     ▏<br> 
+    ▏    <span class="fuelframe">▐</span>  t2Refuel        : <span id="ttrefuel"   > OFFLINE </span><span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐</span>                             <span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>     ▏<br>
+    ▏                                        ▏<br>
+    ▏   <span class="coolerframe"> ▄▄▄▄▄▄▄▄    Colling    ▄▄▄▄▄▄▄▄</span>     ▏<br>
+    ▏   <span class="coolerframe">▐</span>                               <span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Cooling Systems: <span      id="cooler">  DISABLED </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Refrigenerator : <span     id="rfridge">  ENABLED  </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   EPRS STATUS    : <span        id="EPSR">  PRIMED   </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Fire Supression: <span id="firesupress">  PRIMED   </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>                               <span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>    ▏<br>
+    ▏                                        ▏<br>
+    ▏   <span class="tempframe"> ▄▄▄▄▄▄▄▄  TEMPERATURE   ▄▄▄▄▄▄▄</span>     ▏<br>
+    ▏   <span class="tempframe">▐</span>                               <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   HEAT GAIN       : <span id="heatgain">         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   COOLING RATE    : <span id="coolrate">         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   HEALTH          : <span id="health"  >         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>                               <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>    ▏<br>
+    ▏                                        ▏<br>
+    ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔<br>
 </pre>
         </div>
     </div>

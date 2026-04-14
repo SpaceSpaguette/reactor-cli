@@ -67,3 +67,13 @@ body {
     background:#333;
    
   }
+
+  .fuelframe {
+    color: #cc3333; 
+  }
+  .coolerframe {
+    color: rgb(43, 114, 186);
+  }
+.tempframe {
+    color: #b67d14;
+}
