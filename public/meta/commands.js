@@ -101,3 +101,21 @@ function clearScreen() {
     lines = []
 }
 
+async function shutdown () {
+    printText('warn','Shutdown Reactor?')
+    printText('warn','Y/N')
+    const confirm = await getInput()
+    if (confirm === "Y" || confirm === "y") {
+        mainloop(1)
+        printText('warn','Alright shutting it down')
+    } else {
+        printText('warn','Aborting')
+    }
+}
+
+
+function status () {
+    printText('ERROR',`Temperature: ${temperature.toFixed(1)}`)
+    printText('ERROR',`Fuel: ${fuel.toFixed(1)}`)
+    printText('ERROR',`Pressure: ${pressure.toFixed(1)}`)
+}

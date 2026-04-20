@@ -76,30 +76,42 @@ async function getInput(flag = true, response = '') {
 }
 
 /*
-+=================TEMPERATURE CONTROL===============+
-| Temperature is determined using few values        |
-| EPRS = When true it makes it have no heat gain.   |
-| Bonus heat. For every tick it decreases value     |
-| basically starts slow but speeds up fast.         |
-| Temperature starts low but gets higher the higher |
-| temperature you have. Thus exponential.           |
-+===================================================+
+This is entirely just a simple equasion.
+When the pressure is low. The heat gain is low
+If the pressure is high its the oposite.
+Fuel cells are just a thing. We reduce their stuff and increase it other ways
+
 */
-function temperature() {
-    var heatgain = reactor_temp / 100;
-    if (!EPRS) {
-        reactor_temp += heatgain;
-        if (bonusheat > 0) {
-            bonusheat -= 1;
-            reactor_temp += 5;
-        }
+function updateSim() {
+    const BASE_TEMP_SPEED = 5;
+    const FUEL_GAIN_SPEED = 0.1;
+    const FUEL_LOSS_SPEED = 1;
+    const NORMAL_FUEL_LEVEL = 75;
+
+    let tempChange = BASE_TEMP_SPEED *  (fuel / NORMAL_FUEL_LEVEL);
+    if (temperature > 393) {
+        pressure += 1
     }
-    if (reactor_temp > 550 && reactor_temp < 1000) {
-        fuelcellavrg -= heatgain / 10;
+    if (pressure > 1000) {
+        tempChange *= 40; // 50% faster
+    } else if (pressure < 100) {
+        tempChange *= 1; // 20% slower
     }
-    if (reactor_temp > 1000) {
-        fuelcellavrg += heatgain / 10;
+
+    temperature += tempChange;
+
+    if (temperature > 5000) {
+        fuel += FUEL_GAIN_SPEED;
+    } else if (temperature < 1000) {
+        fuel -= FUEL_LOSS_SPEED/20;
     }
+    else {
+        fuel -=FUEL_LOSS_SPEED/100
+    }
+
+    // Prevent values from breaking physics (dropping below absolute zero)
+    if (temperature < 0) temperature = 0;
+    if (fuel < 0) fuel = 0;
 }
 
 
@@ -203,23 +215,31 @@ function temperature() {
 |-----------------------|
 */
 
-async function updateDisplay () {
-    // Here we get all the values to display
+// //async function updateDisplay () {
+    //? Okay this time were going to make it performant. For some reason it find it a flex
+    //! This might as well run every second. decrease its dependance
+
+
+
+
+    /*
+    !     Here we get all the values to display
     const fueldis       = document.getElementById('fuelaverage')
     const t2refuel      = document.getElementById('ttrefuel')
-    // END OF FUEL
-    // START OF COOLER
+    ?     END OF FUEL
+    !     START OF COOLER
     const coollevel     = document.getElementById('cooler')
     const refridge      = document.getElementById('rfridge')
     const epsr_display  = document.getElementById('furesupress')
-    // END OF COOLER
-    //START OF TEMPERATURE
+    ?     END OF COOLER
+    !     START OF TEMPERATURE
     const display_heat  = document.getElementById('heatg')
     const coolrate      = document.getElementById('coolrate')
     const display_heath = document.getElementById('health')
+    ?     END OF TEMPERATURE
 
+    TODO: Add the values that we access
+        * fuelcellavrg
+        * EPRS
+    */// }
     
-
-
-
-}   

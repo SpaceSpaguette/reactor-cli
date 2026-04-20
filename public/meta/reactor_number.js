@@ -1,3 +1,10 @@
+// This code was written entirely by AI @Spaguette takes no responsibility over its function.
+// I just can't understand it.
+
+
+
+
+
 const reactorControl = {
     currentValue: 0,
     warningThreshold: 47890,
@@ -61,8 +68,8 @@ const reactorControl = {
   
     update() {
       // 1. Pull the live value from your background variable
-      if (typeof reactor_temp !== 'undefined') {
-        this.currentValue = reactor_temp;
+      if (typeof temperature !== 'undefined') {
+        this.currentValue = temperature;
       }
 
       // 2. Safety check: Ensure the wrapper exists before modifying classes
