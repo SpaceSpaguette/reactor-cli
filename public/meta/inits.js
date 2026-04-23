@@ -14,7 +14,6 @@ var debug = true;
 
 var isRunning = false
 // Current subsystem
-var subSystem = "home"
 
 // fields
 const maxLines = 500;       // maximum lines in the console
