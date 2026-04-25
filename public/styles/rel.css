@@ -64,17 +64,15 @@ body {
 }
 
 .reactor-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
     display: inline-block;
-    background: #0d0d0d;
-    padding: 10px 15px;
-    border: 1px solid #333;
     border-radius: 4px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
     transition: all 0.3s ease;
-    z-index: 10;
 }
+
 
 .reactor-label {
     font-family: 'Consolas', monospace;
