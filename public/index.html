@@ -51,8 +51,18 @@
                 <img id="rods" src="meta/assets/rodsreactor.png" alt="Control rods UI">
             </div>
             <div id="controlpanel">
-                <img id="temps" src="meta/assets/tempsreactor.png" alt="Temps panel UI">
-                <div id="reactor-panel"></div>
+                <div id="reactor-status-panel">
+                    <div class="status-row">
+                        <span class="status-label">REACTOR:</span>
+                        <span class="status-badge badge-ok">ONLINE</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">CORE TEMP:</span>
+                        <div id="temps-overlay"></div>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">COOLANT LOOP:</span>
+                        <span class="status-badge badge-ok">OK</span>
             </div>
         </div>
     </div>
