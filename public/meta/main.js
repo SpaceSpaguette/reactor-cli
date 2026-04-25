@@ -40,6 +40,6 @@ function mainloop(value) {
 
 
 
-reactorControl.init('result')
+reactorControl.init('temps-overlay')
 backgroundloop();
 mainloop()
