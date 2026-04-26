@@ -262,3 +262,11 @@ body {
     transform-origin: right center;
     margin: -15px 0; /* Negate the height of the scaled element to stop the row from expanding */
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background:#333;
+   
+  }

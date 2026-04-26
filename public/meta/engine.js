@@ -21,8 +21,9 @@
 
 
 */
-function printText(form = "warn", text = "TEXT UNDEFINED") {
+function printText(form = "info", text = "TEXT UNDEFINED") {
     // Split text if it is too long
+    form = form.toLowerCase()
     let chunks = [];
     while (text.length > maxLineLength) {
         chunks.push(text.slice(0, maxLineLength));
@@ -40,9 +41,10 @@ function printText(form = "warn", text = "TEXT UNDEFINED") {
     }
 
     // Rebuild HTML inside the container
-    history.innerHTML = lines.map(line =>
-        `<span class="${line.form}">${line.text}</span><br>`
-    ).join("");
+history.innerHTML = lines.map(line =>
+    // Adding 'white-space: pre' stops the browser from trimming spaces
+    `<span class="${line.form}" style="white-space: pre;">${line.text}</span><br>`
+).join("");
 
     history.scrollTop = history.scrollHeight;
 }
@@ -90,7 +92,7 @@ function updateSim() {
 
     let tempChange = BASE_TEMP_SPEED *  (fuel / NORMAL_FUEL_LEVEL);
     if (temperature > 393) {
-        pressure += 1
+        pressure += 1.5
     }
     if (pressure > 1000) {
         tempChange *= 40; // 50% faster
@@ -115,7 +117,21 @@ function updateSim() {
 }
 
 
-
+function cooling () {
+    console.log('trigg')
+    if (cooling_rate == 1) {
+        temperature = temperature - 1
+    }
+    if (cooling_rate == 2) {
+        temperature -= 12
+    }
+    if (cooling_rate == 3) {
+        temperature  = 20
+    }
+    if (cooling_rate == 5) {
+        temperature = temperature - 1000
+    }
+}
 
 
 
@@ -241,5 +257,4 @@ function updateSim() {
     TODO: Add the values that we access
         * fuelcellavrg
         * EPRS
-    */// }
-    
+    *///

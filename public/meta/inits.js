@@ -45,7 +45,7 @@ TODO: Rework the design
     //?     END OF COOLER
     //!     START OF TEMPERATURE
     const display_heat  = document.getElementById('heatg')
-    const coolrate      = document.getElementById('coolrate')
+    const cool      = document.getElementById('coolrate')
     const display_heath = document.getElementById('health')
     //?     END OF TEMPERATURE
 

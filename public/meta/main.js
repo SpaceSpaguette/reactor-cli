@@ -32,8 +32,9 @@ function mainloop(value) {
 
   intervalId = setInterval(() => {
     console.log("Reactor running");
+    cooling()
     updateSim()
-  }, 250);
+  }, 100);
   
   console.log("Reactor started.");
 }
@@ -42,4 +43,3 @@ function mainloop(value) {
 
 reactorControl.init('temps-overlay')
 backgroundloop();
-mainloop()

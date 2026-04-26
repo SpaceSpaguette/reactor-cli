@@ -1,5 +1,5 @@
 function runCommand(input) {
-    printText("info",input)
+    printText("cmd_hist",input)
     if (!commands || Object.keys(commands).length === 0) {
         console.log("Commands not loaded yet");
         return;

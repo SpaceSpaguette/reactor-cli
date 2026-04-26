@@ -10,5 +10,7 @@
     "help":["Help",0],
     "cls":["clearScreen",0],
     "shutdown":["shutdown",0],
-    "stat":["status",0]
+    "stat":["stats",0],
+    "colortest":["colortest",0],
+    "cooler":["coolrate",1]
 }

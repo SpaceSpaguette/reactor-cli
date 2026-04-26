@@ -28,7 +28,7 @@ async function StartReactor() {
     const confirm = await getInput()
     if ((confirm === "y" || confirm === "Y")&& !isRunning) {
         printText('warn','Staring reactor')
-        bonusheat = 50
+        mainloop()
         isRunning = true
     } else {
         printText('warn', "Cancelling operation")
@@ -108,14 +108,62 @@ async function shutdown () {
     if (confirm === "Y" || confirm === "y") {
         mainloop(1)
         printText('warn','Alright shutting it down')
+        isRunning = false
     } else {
         printText('warn','Aborting')
     }
 }
 
 
-function status () {
-    printText('ERROR',`Temperature: ${temperature.toFixed(1)}`)
-    printText('ERROR',`Fuel: ${fuel.toFixed(1)}`)
-    printText('ERROR',`Pressure: ${pressure.toFixed(1)}`)
+function stats () {
+    var status_temperature    = String(temperature.toFixed(2))
+    var status_EPRS           = String(EPRS)
+    var status_pressure       = String(pressure.toFixed(2))
+    var status_cooling        = String(cooling_rate)
+    var status_fuel           = String(fuel.toFixed(2))
+    //! Here we pad them
+
+                //                  123456789abcdef  |
+    printText("info","+------------------------------+")
+    printText("info",`| TEMPERATURE: ${status_temperature.padEnd(16)}|`)
+    printText("info",`| PRESSURE   : ${status_pressure.padEnd(16)}|`)
+    printText("info",`| EPRS       : ${status_EPRS.padEnd(16)}|`)
+    printText("info",`| COOLING SYS: ${status_cooling.padEnd(16)}|`)
+    printText("info",`| FUEL LEVEL : ${status_fuel.padEnd(16)}|`)
+    printText("info","+------------------------------+")
+    
+
+
+
+
+
+
+
+
+    /*printText('warn',`Temperature: ${temperature.toFixed(1)}`)
+    printText('warn',`Fuel: ${fuel.toFixed(1)}`)
+    printText('warn',`Pressure: ${pressure.toFixed(1)}`)*/
 }
+
+function colortest () {
+    Theme('nord')
+    printText('error',`ERROR`)
+    printText('warn',`WARN`)
+    printText('info',`INFO`)
+    printText('ok',`OK`)
+    printText('badge-ok',`BADGE-OK`)
+    printText('badge-warn',`BADGE-WARN`)
+    printText('badge-error',`BADGE-ERROR`)
+}
+
+
+
+
+function coolrate (number) {
+    sec = number | 0
+    if (sec > 5) {cooling_rate = 5}
+    else if (sec < 0) {cooling_rate = 0}
+    else {
+    cooling_rate = sec
+}}
+stats()
