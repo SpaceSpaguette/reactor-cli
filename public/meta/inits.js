@@ -1,32 +1,27 @@
-// values are loaded first. we will change the later. 
+// values are loaded first. we will change them later. 
 
-var reactor_temp = 293;
-var coppercage_temp = 293;
-var coolant_temp = 293;
-var turbines_temp = 293;
+var temperature = 293; // The central temperature meter. Do not mess with it
+var fuel = 101; // Measured in %. But who cares
+// ! These values mostly suck a big baboon ballsack. Remaking them is important
 
-// pressure
-
-
-var reactor_pressure = 0;
-var coolant_pressure = 0;
-var turbines_pressure = 0;
-
-
-//subSystem var
+var cooling_rate = 0
+var pressure = 1
+// 
 var subSystem = 'home';
-
+var EPRS = false
 // dev env == true
 var debug = true;
 
-
+var isRunning = false
 // Current subsystem
-var subSystem = "home"
 
 // fields
-const maxLines = 47;        // maximum lines in the console
-const maxLineLength = 50;   // maximum characters per line
-const lines = [];           // stores all lines as objects
+const maxLines = 500;       // maximum lines in the console
+const maxLineLength = 50;   // ma~ximum characters per line
+var lines = [];           // stores all lines as objects
+
+const inputHistory = [];    // stores command history for arrow keys
+let inputHistoryIndex = -1; // current position in input history
 
 var inputpass = 0
 
@@ -34,7 +29,28 @@ var inputpass = 0
 const history = document.getElementById("history");
 const result  = document.getElementById("result");
 
-// contains the command list. Stores it in memory
+/*
+* The following declarations are for display entities.
+TODO: Rework the design
+*/
+
+    //!     Here we get all the values to display
+    const fueldis       = document.getElementById('fuelaverage')
+    const t2refuel      = document.getElementById('ttrefuel')
+    //?     END OF FUEL
+    //!     START OF COOLER
+    const coollevel     = document.getElementById('cooler')
+    const refridge      = document.getElementById('rfridge')
+    const epsr_display  = document.getElementById('furesupress')
+    //?     END OF COOLER
+    //!     START OF TEMPERATURE
+    const display_heat  = document.getElementById('heatg')
+    const cool      = document.getElementById('coolrate')
+    const display_heath = document.getElementById('health')
+    //?     END OF TEMPERATURE
+
+
+
 let commands = {};
 fetch("meta/data/home.json")
     .then(r => r.json())

@@ -1,0 +1,79 @@
+
+body {
+    background-color: #121312;
+}
+
+#commandline {
+    background-color: #1a1c1a;
+    color: #ffb000; 
+}
+
+#history {
+    background-color: #151615;
+    color: #ffb000;
+    border: #4a4d4a 2px solid; 
+    border-radius: 3px !important; 
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4); 
+}
+
+#result {
+    background-color: #1a1c1a;
+    color: #e0e0d0;
+    border: #4a4d4a 2px solid;
+    border-radius: 3px !important;
+    text-shadow: 0 0 1px rgba(224, 224, 208, 0.4);
+}
+
+.error {
+    color: #cc3333; 
+    background-color: rgba(204, 51, 51, 0.15);
+    border-left: 3px solid #cc3333;
+    padding-left: 5px;
+    display: inline-block;
+    width: 98%;
+}
+
+.warn {
+    color: #d9b326; 
+}
+
+.info {
+    color: #92a4b8;
+}
+
+#cmdInput {
+    background-color: #111311;
+    color: #ffb000;
+    border: #333633 2px solid;
+    border-radius: 3px !important;
+    text-shadow: 0 0 1px rgba(255, 176, 0, 0.4);
+}
+
+#cmdInput:focus {
+    outline: none;
+    border-color: #ffb000;
+    background-color: #1a1c1a;
+    box-shadow: none;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background:#333;
+   
+  }
+
+  .fuelframe {
+    color: #cc3333; 
+  }
+  .coolerframe {
+    color: rgb(43, 114, 186);
+  }
+.tempframe {
+    color: #b67d14;
+}

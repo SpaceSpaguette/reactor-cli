@@ -1,5 +1,5 @@
 function runCommand(input) {
-    printText("info",input)
+    printText("cmd_hist",input)
     if (!commands || Object.keys(commands).length === 0) {
         console.log("Commands not loaded yet");
         return;
@@ -9,7 +9,7 @@ function runCommand(input) {
     const commandEntry = commands[cmd[0]]; // look up command
 
     if (!commandEntry) {
-        console.log("Unknown command:", cmd[0]);
+        printText("error", "Unknown command: " + cmd[0]);
         return;
     }
 

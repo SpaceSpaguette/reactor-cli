@@ -1,28 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link id="theme" rel="stylesheet" href="styles/rel.css">
-    <link id="theme" rel="stylesheet" href="styles/themes/debug.css">
+    <link rel="stylesheet" href="styles/rel.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="styles/themes/chernobyl.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reactor</title>
 </head>
+
 <body>
-<div class="container">
-    <div class="left-panel">
-        <p id="history"></p>
-        <div id="commandline">
-            <input id="cmdInput" placeholder="Commandline">
+    <div class="container">
+        <div class="left-panel">
+            <p id="history"></p>
+            <div id="commandline">
+                <input id="cmdInput" placeholder="Commandline">
+            </div>
+        </div>
+        <div id="reactor-panel"></div>
+        <div id="result">
+<pre style="line-height: 0.6; font-family: monospace; font-size:small; display:none">
+    ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁<br>
+    ▏     <span class="fuelframe">▄▄▄▄▄▄▄      FUEL     ▄▄▄▄▄▄▄</span>      ▏<br>
+    ▏    <span class="fuelframe">▐</span>                             <span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐</span>  Fuel AVERAGE    : <span id="fuelaverage">  100%   </span><span class="fuelframe">▊</span>     ▏<br> 
+    ▏    <span class="fuelframe">▐</span>  t2Refuel        : <span id="ttrefuel"   > OFFLINE </span><span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐</span>                             <span class="fuelframe">▊</span>     ▏<br>
+    ▏    <span class="fuelframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>     ▏<br>
+    ▏                                        ▏<br>
+    ▏   <span class="coolerframe"> ▄▄▄▄▄▄▄▄    Colling    ▄▄▄▄▄▄▄▄</span>     ▏<br>
+    ▏   <span class="coolerframe">▐</span>                               <span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Cooling Systems: <span      id="cooler">  DISABLED </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Refrigenerator : <span     id="rfridge">  ENABLED  </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   EPRS STATUS    : <span        id="EPSR">  PRIMED   </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>   Fire Supression: <span id="firesupress">  PRIMED   </span><span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐</span>                               <span class="coolerframe">▊</span>    ▏<br>
+    ▏   <span class="coolerframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>    ▏<br>
+    ▏                                        ▏<br>
+    ▏   <span class="tempframe"> ▄▄▄▄▄▄▄▄  TEMPERATURE   ▄▄▄▄▄▄▄</span>     ▏<br>
+    ▏   <span class="tempframe">▐</span>                               <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   HEAT GAIN       : <span id="heatgain">         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   COOLING RATE    : <span id="coolrate">         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>   HEALTH          : <span id="health"  >         </span> <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐</span>                               <span class="tempframe">▊</span>    ▏<br>
+    ▏   <span class="tempframe">▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▊</span>    ▏<br>
+    ▏                                        ▏<br>
+    ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔<br></pre>
+            <div id="controlrods">
+                <img id="rods" src="meta/assets/rodsreactor.png" alt="Control rods UI">
+            </div>
+            <div id="controlpanel">
+                <div id="reactor-status-panel">
+                    <div class="status-row">
+                        <span class="status-label">REACTOR:</span>
+                        <span class="status-badge badge-ok">ONLINE</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">CORE TEMP:</span>
+                        <div id="temps-overlay"></div>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">COOLANT LOOP:</span>
+                        <span class="status-badge badge-ok">OK</span>
+            </div>
         </div>
     </div>
-    
-    <div id="result">Result</div>
-</div>
 </body>
 <script src="meta/inits.js"></script>
+<script src="meta/engine.js"></script>
 <script src="meta/commands.js"></script>
 <script src="meta/cmdengine.js"></script>
 <script src="meta/eventlistener.js"></script>
-<script src="meta/engine.js"></script>
+<script src="meta/reactor_number.js"></script>
 <script src="meta/main.js"></script>
+
 </html>

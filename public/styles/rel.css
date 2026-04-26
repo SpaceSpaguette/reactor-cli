@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -8,27 +9,264 @@ html, body {
 
 .container {
     display: flex;
-    height: 100vh; 
+    height: 100vh;
 }
+
 .left-panel {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 33%;
     height: 100%;
 }
 
 #history {
-    height: 90%;
+
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 100%;
+    width: 97%;
     font-family: monospace;
     font-size: 20px;
     line-height: 1.2em;
+    border-radius: 10px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 #commandline {
-    height: 10%; 
+    height: 15%;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+#cmdInput {
+    width: 98%;
+    height: 98%;
+    justify-self: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-left: 5px;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 15px;
 }
 
 #result {
-    width: 67%;
-    height: 100%;
+    width: 69%;
+    height: 94%;
+    border-radius: 10px;
+    justify-self: center;
+    padding: 10px;
+    margin-top: 20px;
+    position: relative;
+    background-color: #050505;
+    color: white;
 }
+
+.reactor-container {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+
+.reactor-label {
+    font-family: 'Consolas', monospace;
+    font-size: 9px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.reactor-display {
+    display: flex;
+    gap: 6px;
+}
+
+.reactor-container.warning-active {
+    background-color: #1a0000;
+    border-color: #c37f12;
+    box-shadow: 0 0 20px #da4703;
+    animation: reactor-pulse-border 0.8s infinite alternate;
+}
+
+@keyframes reactor-pulse-border {
+    from {
+        border-color: #660000;
+    }
+
+    to {
+        border-color: #ff0000;
+    }
+}
+
+.reactor-digit {
+    position: relative;
+    width: 22px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.reactor-segment {
+    position: absolute;
+    background-color: #1a0808;
+    border-radius: 1px;
+}
+
+.reactor-segment.segment-on {
+    background-color: #ff1100;
+    box-shadow: 0 0 5px #aa0000;
+}
+
+.reactor-segment.a {
+    top: 0;
+    left: 2px;
+    width: 18px;
+    height: 3px;
+}
+
+.reactor-segment.b {
+    top: 2px;
+    right: 0;
+    width: 3px;
+    height: 16px;
+}
+
+.reactor-segment.c {
+    bottom: 2px;
+    right: 0;
+    width: 3px;
+    height: 16px;
+}
+
+.reactor-segment.d {
+    bottom: 0;
+    left: 2px;
+    width: 18px;
+    height: 3px;
+}
+
+.reactor-segment.e {
+    bottom: 2px;
+    left: 0;
+    width: 3px;
+    height: 16px;
+}
+
+.reactor-segment.f {
+    top: 2px;
+    left: 0;
+    width: 3px;
+    height: 16px;
+}
+
+.reactor-segment.g {
+    top: 18px;
+    left: 2px;
+    width: 18px;
+    height: 3px;
+}
+
+.core {
+    width: 24rem;
+    height: 20rem;
+    border-radius: 50px;
+    border: #050505 solid;
+    display: flex;
+
+    /* Centering magic happens here */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+
+    padding: 1rem;
+    /* Note: padding might push the inner box slightly if it's too big */
+}
+
+.fuelcellct {
+    height: 19rem;
+    width: 23rem;
+    border-radius: 1cm;
+    border: #1a0000 solid;
+}
+
+
+.fuelcellct * {
+    width: 2rem;
+    height: 4rem;
+    margin-left: 1rem;
+    background-color: aliceblue;
+}
+
+#controlpanel {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 100 !important;
+}
+
+#reactor-status-panel {
+    background-color: #1a1e24;
+    border: 2px solid #2d343e;
+    border-radius: 6px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 260px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.status-row {
+    background-color: #11151a;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    min-height: 24px;
+}
+
+.status-label {
+    color: #e0e6ed;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+}
+
+.badge-ok {
+    background-color: #3bb143;
+}
+
+#temps-overlay {
+    display: flex;
+    align-items: center;
+    transform: scale(0.45);
+    transform-origin: right center;
+    margin: -15px 0; /* Negate the height of the scaled element to stop the row from expanding */
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background:#333;
+   
+  }

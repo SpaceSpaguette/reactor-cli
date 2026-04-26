@@ -3,6 +3,14 @@
     "exit":["Exit", 0],
     "shop":["Shop", 1],
     "sr":["StartReactor", 0],
-    "temperature":["Temperature", 0]
-    "pindir":["Pindir",0]
+    "temperature":["Temperature", 0],
+    "color":["Color", 1],
+    "pindir":["Pindir",0],
+    "theme":["Theme",1],
+    "help":["Help",0],
+    "cls":["clearScreen",0],
+    "shutdown":["shutdown",0],
+    "stat":["stats",0],
+    "colortest":["colortest",0],
+    "cooler":["coolrate",1]
 }
