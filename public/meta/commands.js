@@ -91,7 +91,7 @@ function Help(help) {
     printText('info', 'shop - open shop');
     printText('info', 'sr - start reactor');
     printText('info', 'temperature - show temperature');
-    printText('info', 'theme - change theme (chernobyl, debug, production, blue)');
+    printText('info', 'theme - change theme (chernobyl, debug, production, blue, nord)');
     printText('info', 'help - show help');
     printText('info', 'colortest - tests color idk');
 }
