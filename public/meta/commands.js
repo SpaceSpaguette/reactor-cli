@@ -91,9 +91,8 @@ function Help(help) {
     printText('info', 'shop - open shop');
     printText('info', 'sr - start reactor');
     printText('info', 'temperature - show temperature');
-    printText('info', 'theme - change theme (chernobyl, debug, produciton, blue)');
+    printText('info', 'theme - change theme (chernobyl, debug, production, blue)');
     printText('info', 'help - show help');
-    // I will crate a function to take care of this. For now. Fuck it
 }
 
 
