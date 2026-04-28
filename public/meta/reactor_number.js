@@ -1,8 +1,3 @@
-// This code was written entirely by AI @Spaguette takes no responsibility over its function.
-// I just can't understand it.
-
-
-
 
 
 const reactorControl = {
