@@ -93,6 +93,7 @@ function Help(help) {
     printText('info', 'temperature - show temperature');
     printText('info', 'theme - change theme (chernobyl, debug, production, blue)');
     printText('info', 'help - show help');
+    printText('info', 'colortest - tests color idk');
 }
 
 
